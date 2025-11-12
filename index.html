@@ -37,9 +37,9 @@ header h1 { font-size:1.5rem; }
 /* Final message */
 #finalMessage { display: none; font-size: 2rem; font-weight: bold; color:#e74c3c; text-align:center; margin: 1rem 0 2rem 0; animation: fadeIn 1s ease forwards; }
 
-/* Buttons */
-.buttons { display:flex; flex-direction: column; justify-content:center; align-items:center; gap:1rem; margin: 1rem auto; position: relative; max-width: 300px; }
-button { padding:1rem 2rem; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition: all 0.3s; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: bold; min-width: 200px; height: 60px; display: flex; align-items: center; justify-content: center; }
+/* Buttons Row */
+.buttons { display:flex; justify-content:center; align-items:center; gap:1rem; margin: 1rem auto; max-width: 95%; flex-wrap: wrap; position: relative; }
+button { padding:1rem 2rem; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition: all 0.3s; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: bold; min-width: 120px; height: 50px; display: flex; align-items: center; justify-content: center; }
 button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
 button:active { transform: translateY(2px); }
 button#yes { background: linear-gradient(145deg, var(--btn-yes), #27ae60); color:white; z-index: 10; transition: left 0.2s, top 0.2s; }
@@ -61,7 +61,7 @@ footer { text-align:center; padding:1.5rem; font-size:0.9rem; background: rgba(2
 
 @media (max-width:480px){
   .main-image span { font-size:1.5rem; top: 5px; }
-  button { padding: 0.8rem 1.8rem; font-size: 1rem; min-width: 150px; height: 50px; }
+  button { padding: 0.8rem 1.5rem; font-size: 1rem; min-width: 100px; height: 45px; }
   .fill { font-size: 0.9rem; height:35px; padding-right:10px; }
   .result-bar { height:35px; }
   #finalMessage { font-size: 1.5rem; }

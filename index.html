@@ -38,11 +38,11 @@ header h1 { font-size:1.5rem; }
 #finalMessage { display: none; font-size: 2rem; font-weight: bold; color:#e74c3c; text-align:center; margin: 1rem 0 2rem 0; animation: fadeIn 1s ease forwards; }
 
 /* Buttons Row */
-.buttons { display:flex; justify-content:center; align-items:center; gap:1rem; margin: 1rem auto; max-width: 95%; flex-wrap: wrap; position: relative; }
+.buttons { display:flex; justify-content:center; align-items:center; gap:1rem; margin: 1rem auto; max-width: 95%; position: relative; }
 button { padding:1rem 2rem; border:none; border-radius:50px; font-size:1.2rem; cursor:pointer; transition: all 0.3s; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight: bold; min-width: 120px; height: 50px; display: flex; align-items: center; justify-content: center; }
 button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
 button:active { transform: translateY(2px); }
-button#yes { background: linear-gradient(145deg, var(--btn-yes), #27ae60); color:white; z-index: 10; transition: left 0.2s, top 0.2s; }
+button#yes { background: linear-gradient(145deg, var(--btn-yes), #27ae60); color:white; z-index: 10; transition: left 0.2s; }
 button#no { background: linear-gradient(145deg, var(--btn-no), #c0392b); color:white; }
 
 /* Animations */
@@ -110,7 +110,7 @@ toggleTheme.addEventListener('click', () => {
   localStorage.setItem('theme', body.className);
 });
 
-// Button Yes (هرب)
+// Button Yes (هرب) فقط أفقي
 const yesBtn = document.getElementById('yes');
 const buttonsContainer = document.querySelector('.buttons');
 yesBtn.addEventListener('mouseenter', moveButton);
@@ -124,15 +124,11 @@ function moveButton(){
   const containerRect = buttonsContainer.getBoundingClientRect();
   const btnRect = yesBtn.getBoundingClientRect();
 
+  // يبقى في نفس صف الزر لا (يمين أو يسار)
   const maxX = containerRect.width - btnRect.width;
-  const maxY = containerRect.height - btnRect.height;
-
   const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
-
-  yesBtn.style.position = 'absolute';
+  yesBtn.style.position = 'relative';
   yesBtn.style.left = randomX + 'px';
-  yesBtn.style.top = randomY + 'px';
 }
 
 // Button No
